@@ -36,13 +36,13 @@ Model types explored were:
 * Support Vector Machines
 * Neural Nets
 
-## Results - update
+## Results
 
-Based on the model evaluations which are detailed in the notebook, the final model chosen to move forward with is a boosted method using Adaboost. The strenghts of this model include its high recall score as compared to others and overall high accuracy.
+Out of all the iterations of models that I tried, the neural nets using GloVe were most sucessful in achieving high accuracy. However, after trying several different techniques, the overfitting problem still didn't improve too much. The final model iteration used L1 regularization and included drop out layers to reduce sensitivity to variance. 
 
-Areas where the model could be improved include reducing overall error as shown in the confusion matrix below.
+My final neural net achieved 98% accuracy on the training set but 64% on the test set. I would recommend moving forward with this model to evaluate sentiment around future events and conferences related to tech as it has learned off of a specified data set.
 
-![confusion_matrix.png](./images/confusion_matrix.png)
+![neural_net_accuracy.png](./images/neural_net_accuracy.png)
 
 ### Conclusions & Future Work
 
@@ -52,11 +52,11 @@ The classifiers typically used for text data don't have as many hyper-parameters
 
 In order to improve this model and make in more generalizable, it is recommended to gather more data that has a higher percentage of labels that indicate positive or negative sentiment. Adding more data could also allow the use of a simpler neural net model, which could help to reduce runtimes.
 
-## For More Information - update
+## For More Information
 
-Please reference the [Jupyter Notebook](./Final%20Notebook.ipynb) or review this [presentation](./Data%20Classification%20Presentation.pdf).
+Please reference the [Jupyter Notebook](./Final%20Notebook.ipynb) or review this [presentation](./Sentiment%20Analysis%20with%20Twitter%20NLP.pdf).
 
-## Repository Structure - update
+## Repository Structure
 
 ```
 ├── Archive
