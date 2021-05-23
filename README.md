@@ -14,23 +14,27 @@ The data used is sourced from Twitter from SXSW 2013, and contains tweets about 
 
 The data presented a challenge in terms of class imbalance; the majority of the data was labeled as 'neutral', leaving a relatively small amount of samples that indicated actual sentiment, positive or negative. 
 
+![sentiment_bars.png](./Images/sentiment_bars.png)
+
 ### Business Problem
 
 The resulting model will be used to classify tweets from future tech conferences from Google and Apple, and analyze how sentiment for the brands has changed over time.
 
-## Methodology - update
+## Methodology 
 
-A variety of pre-processing and modeling techniques were explored in order to effectively transform the text data and build a strong classifier. 
+A variety of pre-processing and modeling techniques were explored in order to effectively transform the text data and build a strong classifier. Model performance was evaluated on accuracy scores to suit the business goal of building an accurate model for future use.  
 
 Preprocessing included:
 
-* Location-based indicators: latitude, longitude, basin, distance to land
-* Weather conditions: wind speed, storm speed, storm direction
-* Times of occurence: year, week of year
+* Data cleaning and exploration to sort into relevant categories
+* Tokenization of words and removal of stop words and grammar. Twitter handles and URLs were also removed
+* Vectorization of text data using diffent strategies such as Count Vectorization and TF-IDF
 
 Model types explored were:
 
-These methods were evaluated based on their accuracy scores. They were examined to understand where error was occuring in order to optimize. 
+* Bayesian Classifiers
+* Support Vector Machines
+* Neural Nets
 
 ## Results - update
 
@@ -40,26 +44,26 @@ Areas where the model could be improved include reducing overall error as shown 
 
 ![confusion_matrix.png](./images/confusion_matrix.png)
 
-### Conclusions & Future Work - update
+### Conclusions & Future Work
 
-The Adaboost model can be further tuned to reduce error, and other boosting methods can be exploredto see how they compare. It is also recommended to revisit the feature selection to potentially remove more of the less trustworthy features to get better predictions.
+This data set presented the challenge of a pretty extreme class imbalance. Since the majority of samples were labeled as neutral, there were fewer indicators of sentiment.
 
-This data set itself presented several challenges. For future work it is recommended to work closer with or take further time to examine/understand NOAA data and their methodology in order to improve data that is piped into this model. This may include examining the different sources of the data as well as the data gathering process.
+The classifiers typically used for text data don't have as many hyper-parameters that can be tuned to correct for class imbalance. Compliment Naive Bayes was applied to help with this, and and SVM model was used in hopes of reducing overfitting. However the most satisfactory results came from the neural net.
 
-Lastly, while this project analyzed individual readings in the data, it is recommended to analyze data grouped by storm if more instances of the 0 class are able to be added to the data set to take a more holistic look at storm patterns.
+In order to improve this model and make in more generalizable, it is recommended to gather more data that has a higher percentage of labels that indicate positive or negative sentiment. Adding more data could also allow the use of a simpler neural net model, which could help to reduce runtimes.
 
 ## For More Information - update
 
-Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review this [presentation](./Data%20Classification%20Presentation.pdf).
+Please reference the [Jupyter Notebook](./Final%20Notebook.ipynb) or review this [presentation](./Data%20Classification%20Presentation.pdf).
 
 ## Repository Structure - update
 
 ```
-├── images
-├── Data Classification_Predicting Tropical Storms.ipynb
-├── Data Visualizations.ipynb
-├── IBTrACS_version4_Technical_Details.pdf
-├── Data Classification Presentation.pdf
+├── Archive
+├── Images
+├── Data
+├── Final Notebook.ipynb
+├── Sentiment Analysis with Twitter NLP.pdf
 ├── README.md
 
 ```
