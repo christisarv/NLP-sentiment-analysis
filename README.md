@@ -42,7 +42,7 @@ Out of all the iterations of models that I tried, the neural nets using GloVe we
 
 My final neural net achieved 98% accuracy on the training set but 64% on the test set. I would recommend moving forward with this model to evaluate sentiment around future events and conferences related to tech as it has learned off of a specified data set.
 
-![neural_net_accuracy.png](./images/neural_net_accuracy.png)
+![neural_net_accuracy.png](./Images/neural_net_accuracy.png)
 
 ### Conclusions & Future Work
 
